@@ -2,10 +2,10 @@
 .DS_Store
 *.ipynb_checkpoints
 poetry.lock
-/temp_frames
-/temp_images
-/temp_videos
-/rollup_tests
+temp_frames/
+temp_images/
+temp_videos/
+rollup_tests/
 
 
 # Byte-compiled / optimized / DLL files
