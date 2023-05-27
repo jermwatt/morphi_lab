@@ -17,7 +17,29 @@ def download_youtube_video(video_url='https://www.youtube.com/shorts/VwvKpsldxFA
     print("Video downloaded successfully!")
 
 
-def draw_detections(object_detector, frames):
+# draw detections on a batch of frames
+def draw_detection_single_frame(object_detector, frame):
+    # Convert the frames to PIL Images
+    frame_pil = Image.fromarray(cv2.cvtColor(frame, cv2.COLOR_BGR2RGB))
+
+    # Perform object detection on the frame
+    detections = object_detector(frame_pil)
+
+    # Draw the detections on the frame
+    for detection in detections:
+        x = int(detection['box']['xmin'])
+        y = int(detection['box']['ymin'])
+        width = int(detection['box']['xmax'] - detection['box']['xmin'])
+        height = int(detection['box']['ymax'] - detection['box']['ymin'])
+        label = detection['label']
+        cv2.rectangle(frame, (x, y), (x + width, y + height), (0, 255, 0), 2)
+        cv2.putText(frame, label, (x, y - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.9, (0, 255, 0), 2)
+
+    return frame
+
+
+# draw detections on a batch of frames
+def draw_detections_batch(object_detector, frames):
     # Convert the frames to PIL Images
     frame_pils = [Image.fromarray(cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)) for frame in frames]
 
