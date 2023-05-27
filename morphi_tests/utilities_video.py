@@ -122,3 +122,4 @@ def detect_objects_in_video(object_detector, input_path, output_path, batch_size
 
     print("The video was successfully saved")
     progress_bar.close()
+    
