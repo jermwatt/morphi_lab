@@ -1,11 +1,17 @@
 # local 
+/models
+/.venv 
+/runs
+poetry.lock
+/test_data
+/notebooks
 .DS_Store
 *.ipynb_checkpoints
-poetry.lock
-temp_frames/
-temp_images/
-temp_videos/
-rollup_tests/
+.lock
+library_test.ipynb
+/morphi_lab/models
+*models
+*test_data
 
 
 # Byte-compiled / optimized / DLL files
@@ -161,3 +167,10 @@ dmypy.json
 
 # Cython debug symbols
 cython_debug/
+
+# PyCharm
+#  JetBrains specific template is maintained in a separate JetBrains.gitignore that can
+#  be found at https://github.com/github/gitignore/blob/main/Global/JetBrains.gitignore
+#  and can be added to the global gitignore or merged into this file.  For a more nuclear
+#  option (not recommended) you can uncomment the following to ignore the entire idea folder.
+#.idea/
