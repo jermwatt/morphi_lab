@@ -37,6 +37,7 @@ def segment_video(input_path, output_path):
             segmenter.segment()
             # segmenter.plot_segmentations()
             depth = DepthEstimator(segmenter)
+            depth.compute_depth()
             depth.replace_segmentation_with_depth()
 
             # write frame
