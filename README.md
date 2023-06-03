@@ -18,6 +18,7 @@ morphi_lab/: Contains models and classes for performing segmentation, depth esti
 
 This project utilizes [Python poetry](https://python-poetry.org/) for its installation process, following standard protocols.
 
+To run detection and segmentation an appropriate [yolo8 model](https://docs.ultralytics.com/tasks/segment/) (e.g,. `yolov8n-seg`) must be installed in the `morphi_labs/models` directory.
 
 ## Functionality
 
