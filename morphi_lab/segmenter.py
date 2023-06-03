@@ -117,7 +117,7 @@ class Segmenter:
             cv2.rectangle(img, c1, c2, color, -1, cv2.LINE_AA)  # filled
             cv2.putText(img, label, (c1[0], c1[1] - 2), 0, tl / 3, [225, 255, 255], thickness=tf, lineType=cv2.LINE_AA)
 
-    def plot_segmentations(self, show_overlay=True, show_boxes=False, show_result=False):
+    def project_segmentations(self, show_overlay=True, show_boxes=False, show_result=False):
         # unpack segmentation results
         boxes = self.segmentation_result[0].boxes
         masks = self.segmentation_result[0].masks
@@ -126,7 +126,6 @@ class Segmenter:
         if masks is not None:
             masks = masks.data.cpu()
             for seg, box in zip(masks.data.cpu().numpy(), boxes):
-
                 seg = cv2.resize(seg, (self.width, self.height)).astype(np.uint8)
 
                 if show_overlay:
@@ -143,10 +142,10 @@ class Segmenter:
                                       self.colors[int(box.cls)],
                                       f'{self.class_names[int(box.cls)]} {float(box.conf):.3}')
 
-        if show_result:
-            # image_rgb = cv2.imshow('img', img)
-            image_rgb = cv2.cvtColor(self.img, cv2.COLOR_BGR2RGB)
+    def show_result(self):
+        # image_rgb = cv2.imshow('img', img)
+        image_rgb = cv2.cvtColor(self.img, cv2.COLOR_BGR2RGB)
 
-            plt.imshow(image_rgb)
-            plt.axis('off')  # optional: disable the axis
-            plt.show()
+        plt.imshow(image_rgb)
+        plt.axis('off')  # optional: disable the axis
+        plt.show()
