@@ -17,3 +17,9 @@ Step 3: install requirements
 ```bash 
 pip install -r requirements.txt
 ```
+
+Step 4: start tracker
+
+```python 
+python track.py
+```

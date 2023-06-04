@@ -12,6 +12,8 @@ library_test.ipynb
 /morphi_lab/models
 *models
 /models
+/test_data 
+/test_scripts
 
 
 # Byte-compiled / optimized / DLL files
