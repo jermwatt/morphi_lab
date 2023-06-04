@@ -4,7 +4,7 @@ from ultralytics import YOLO
 
 def main():
     # import model
-    model = YOLO('YOLOv8s-seg.pt')
+    model = YOLO('/models/YOLOv8s-seg.pt')
 
     # act and track
     for result in model.track(source=0, show=True, stream=True):
