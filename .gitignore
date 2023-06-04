@@ -11,6 +11,7 @@ poetry.lock
 library_test.ipynb
 /morphi_lab/models
 *models
+/models
 
 
 # Byte-compiled / optimized / DLL files
