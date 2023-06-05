@@ -11,7 +11,7 @@ dir_path = os.path.dirname(os.path.realpath(__file__))
 class Segmenter:
     def __init__(self, conf=0.5):
         self.conf = conf
-        self.model = YOLO(dir_path + '/models/YOLOv8s-seg.pt')
+        self.model = YOLO(dir_path + '/models/YOLOv8n-seg.pt')
         self.img = None
         self.img_height = None
         self.img_width = None
