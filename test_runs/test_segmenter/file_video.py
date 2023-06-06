@@ -10,14 +10,14 @@ def segment_video(input_path, output_path):
 
     # get total number of frames
     total_frames = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
-    
+
     # setup tqdm
     pbar = tqdm(total=total_frames)
 
     # get frame width and height from img
     success, img = cap.read()
 
-    # get frame width and height from img 
+    # get frame width and height from img
     frame_width = img.shape[1]
     frame_height = img.shape[0]
 
@@ -31,20 +31,21 @@ def segment_video(input_path, output_path):
     while success is not None:
         try:
             # segment frame
-            segmenter = Segmenter(conf=0.1)
+            segmenter = Segmenter(conf=0.15)
             segmenter.read_img(img)
             segmenter.segment()
-            segmenter.plot_segmentations()
+            segmenter.project_segmentations()
 
             # write frame
             result.write(segmenter.img)
-        except:
+        except Exception as e:
+            print(e, flush=True)
             break
 
         # read in next frame
         ret, img = cap.read()
 
-        # update tqdm 
+        # update tqdm
         pbar.update(1)
 
     # release video

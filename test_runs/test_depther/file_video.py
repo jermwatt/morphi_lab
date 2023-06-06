@@ -32,9 +32,10 @@ def segment_video(input_path, output_path):
     while success is not None:
         try:
             # segment frame
-            segmenter = Segmenter(conf=0.5)
+            segmenter = Segmenter(conf=0.25)
             segmenter.read_img(img)
             segmenter.segment()
+            
             # segmenter.plot_segmentations()
             depth = DepthEstimator(segmenter)
             depth.compute_depth()

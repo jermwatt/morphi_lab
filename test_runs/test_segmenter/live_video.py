@@ -19,7 +19,7 @@ def test_live_video(conf=0.5):
         segmenter = Segmenter(conf=conf)
         segmenter.read_img(frame)
         segmenter.segment()
-        segmenter.plot_segmentations()
+        segmenter.project_segmentations()
 
         if ret is True:
             # Display the resulting frame
