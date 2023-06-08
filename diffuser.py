@@ -2,7 +2,6 @@ from PIL import Image
 import cv2
 import torch
 from diffusers import StableDiffusionInpaintPipeline
-import matplotlib.pyplot as plt
 
 # define diffusion pipeline - first call will download model
 device = "cuda"
@@ -45,33 +44,3 @@ def diffuse_segmented_img(img,
     # resize to match input img / mask 
     diffused_img = cv2.resize(diffused_img, (img.shape[1], img.shape[0]))
     return diffused_img
-
-
-def plot_diffuse_results(segmented_img,
-                         mask,
-                         diffused_img):
-    # Create a figure with three subplots
-    fig, axes = plt.subplots(1, 3, figsize=(10, 5))
-
-    # Display the first image
-    # axes[0].imshow(cv2.cvtColor(segmented_img, cv2.COLOR_BGR2RGB))
-    axes[0].imshow(segmented_img)
-
-    axes[0].axis('off')
-    axes[0].set_title('segmented image')
-
-    # Display the second image
-    axes[1].imshow(mask)
-    axes[1].axis('off')
-    axes[1].set_title('object segmentations')
-
-    # Display the third image
-    axes[2].imshow(diffused_img)
-    axes[2].axis('off')
-    axes[2].set_title('diffused image')
-
-    # Adjust the layout
-    plt.tight_layout()
-
-    # Show the figure
-    plt.show()
