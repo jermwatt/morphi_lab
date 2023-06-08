@@ -1,0 +1,16 @@
+flask==2.3.2
+requests==2.31.0
+pyyaml==6.0
+numpy==1.24.3
+ffmpeg==1.4
+opencv-python==4.7.0.72
+torch==2.0.1
+accelerate==0.19.0
+ultralytics==8.0.111 
+transformers==4.29.2
+timm==0.9.2
+diffusers==0.16.1
+safetensors==0.3.1
+accelerate==0.19.0
+diffusers==0.16.1
+safetensors==0.3.1
