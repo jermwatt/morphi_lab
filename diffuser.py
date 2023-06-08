@@ -3,7 +3,6 @@ import cv2
 import torch
 from diffusers import StableDiffusionInpaintPipeline
 import matplotlib.pyplot as plt
-from segmenter import 
 
 # define diffusion pipeline - first call will download model
 device = "cuda"
