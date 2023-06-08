@@ -14,7 +14,7 @@ def show_img(image_path):
     plt.axis('off')  
     plt.show()
 
-def plot_all_results(segmented_img,
+def show_all_results(segmented_img,
                      mask,
                      diffused_img):
     # Create a figure with three subplots
