@@ -11,4 +11,5 @@ processor:
   dockerfile_path: /home/ubuntu/morphi_lab/Dockerfile
   requirements_path: /home/ubuntu/morphi_lab/requirements.txt 
   processor_path: /home/ubuntu/morphi_lab/processor.py
+  image_name: jermwatt/segment_diffuse_v1
   num_processors: 1
