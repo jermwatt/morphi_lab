@@ -428,10 +428,6 @@ def processor(todos):
         
         print('...DONE',flush=True)
 
-        # print some flags 
-        print('diffused image complete', flush=True)
-        print(f'size of diffused imge: {diffused_img.shape}')
-        
         # save results
         save_all_results(seg.orig_img,
                          mask,
