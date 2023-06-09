@@ -412,20 +412,23 @@ def processor(todos):
     for img_path in todos.file_paths_to_process:
 
         # segment the donut out of the test image
-#         img_path = "/home/ubuntu/morphi_lab/test_data/test_donut.png"
         labels = ['person']
         img, mask, seg = segment_image(img_path,
                                     labels=labels)
-
+        
         # diffuse the masked segmentation 
         diffused_img = diffuse_segmented_img(img,
                                             mask,
                                             prompt='an ape, smiling, high resolution, holding something')
         
-
+        
+        # print some flags 
+        print('diffused image complete', flush=True)
+        print(f'size of diffused imge: {diffused_img.shape}')
+        
         # save results
         save_all_results(seg.orig_img,
                          mask,
                          diffused_img,
-                         todos.path_to_output)  
+                         todos.path_to_output + '/' + img_path.split('/')[-1].split('.')[0] + '.png')  
         
