@@ -1,0 +1,14 @@
+data:
+  input_path: /home/ubuntu/morphi_lab/test_data
+  output_path: /home/ubuntu/morphi_lab/test_data
+  log_path: /home/ubuntu/morphi_lab/test_data/logs.txt
+    
+queue:
+  feed_rate: 1
+  order_files: False
+
+processor: 
+  dockerfile_path: /home/ubuntu/morphi_lab/Dockerfile
+  requirements_path: /home/ubuntu/morphi_lab/requirements.txt 
+  processor_path: /home/ubuntu/morphi_lab/processor.py
+  num_processors: 1
