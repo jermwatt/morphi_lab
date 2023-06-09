@@ -172,6 +172,7 @@ class Segmenter:
     def read_img_path(self, img_path):
         self.reset()
         self.img = clipper(resizer(read_image(img_path))).unsqueeze(0)
+        self.orig_img = self.img.clone()
         shapes = self.img.shape
         h = shapes[3]
         w = shapes[2]
