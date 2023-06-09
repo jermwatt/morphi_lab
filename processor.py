@@ -30,7 +30,7 @@ def pull_yolo_model(model_selection=available_models['large']):
     server_url = "https://github.com/ultralytics/assets/releases/download/v0.0.0/" + model_selection["server_name"]
 
     # create local save location
-    local_save = "/content/" + model_selection["client_name"]
+    local_save = "/home/ubuntu/morphi_lab/" + model_selection["client_name"]
 
     # pull yolo model to this macine
     response = requests.get(server_url, stream=True)
@@ -412,7 +412,7 @@ def processor(todos):
     for img_path in todos.file_paths_to_process:
 
         # segment the donut out of the test image
-        img_path = "/content/test_donut.png"
+        img_path = "/home/ubuntu/morphi_lab/test_data/test_donut.png"
         labels = ['person']
         img, mask, seg = segment_image(img_path,
                                     labels=labels)
