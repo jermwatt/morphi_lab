@@ -412,16 +412,22 @@ def processor(todos):
     for img_path in todos.file_paths_to_process:
 
         # segment the donut out of the test image
+        print('STARTING: segmentation...',flush=True)
         labels = ['person']
         img, mask, seg = segment_image(img_path,
                                     labels=labels)
         
+        print('...DONE',flush=True)
+
+        
         # diffuse the masked segmentation 
+        print('STARTING: diffusion...',flush=True)
         diffused_img = diffuse_segmented_img(img,
                                             mask,
                                             prompt='an ape, smiling, high resolution, holding something')
         
-        
+        print('...DONE',flush=True)
+
         # print some flags 
         print('diffused image complete', flush=True)
         print(f'size of diffused imge: {diffused_img.shape}')
