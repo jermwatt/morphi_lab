@@ -1,7 +1,7 @@
 data:
   input_path: /home/ubuntu/morphi_lab/test_data
-  output_path: /home/ubuntu/morphi_lab/test_data
-  log_path: /home/ubuntu/morphi_lab/test_data/logs.txt
+  output_path: /home/ubuntu/morphi_lab/output_data
+  log_path: /home/ubuntu/morphi_lab/output_data/logs.txt
     
 queue:
   feed_rate: 1
