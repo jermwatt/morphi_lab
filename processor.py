@@ -412,7 +412,7 @@ def processor(todos):
     for img_path in todos.file_paths_to_process:
 
         # segment the donut out of the test image
-        img_path = "/home/ubuntu/morphi_lab/test_data/test_donut.png"
+#         img_path = "/home/ubuntu/morphi_lab/test_data/test_donut.png"
         labels = ['person']
         img, mask, seg = segment_image(img_path,
                                     labels=labels)
