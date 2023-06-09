@@ -30,7 +30,7 @@ def pull_yolo_model(model_selection=available_models['large']):
     server_url = "https://github.com/ultralytics/assets/releases/download/v0.0.0/" + model_selection["server_name"]
 
     # create local save location
-    local_save = "/home/ubuntu/morphi_lab/" + model_selection["client_name"]
+    local_save = "/processor_app/" + model_selection["client_name"]
 
     # pull yolo model to this macine
     response = requests.get(server_url, stream=True)
