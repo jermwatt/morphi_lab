@@ -33,6 +33,8 @@ def diffuse_segmented_img(img,
     if seed is not None:
         if isinstance(seed,int):
             torch.manual_seed(seed)
+    else:
+        print(f'your seed is {torch.seed()}')
     diffused_img = diffusion_pipe(
                                   prompt=prompt,
                                   negative_prompt=negative_prompt,
