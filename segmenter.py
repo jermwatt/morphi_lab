@@ -172,7 +172,6 @@ class Segmenter:
     def read_img_path(self, img_path):
         self.reset()
         self.img = clipper(resizer(read_image(img_path))).unsqueeze(0)
-        self.orig_img = self.img.clone()
         shapes = self.img.shape
         h = shapes[3]
         w = shapes[2]
@@ -260,6 +259,7 @@ class Segmenter:
         # bring img back to cpu 
         self.img = self.img.cpu().numpy()
         self.img = np.squeeze(self.img).transpose((1, 2, 0))
+        self.orig_img = self.img.copy()
 
         # unpack segmentation results
         boxes = self.segmentation_result[0].boxes
