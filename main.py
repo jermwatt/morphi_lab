@@ -34,7 +34,7 @@ def main(img_path: str,
     if verbose:
         print('performing segmentation...')
     labels = [label]
-    img, mask, seg = segment_image(img_path,
+    img, mask, seg = segment_image(img_path=img_path,
                                    labels=labels)
     if verbose:
         print('segmentation complete.')
@@ -42,10 +42,10 @@ def main(img_path: str,
     ## diffuse the masked segmentation 
     if verbose:
         print('diffusing segmentation...')
-    diffused_img = diffuse_segmented_img(img,
-                                         mask,
-                                         prompt,
-                                         seed)
+    diffused_img = diffuse_segmented_img(img=img,
+                                         mask=mask,
+                                         prompt=prompt,
+                                         seed=seed)
     if verbose:
         print('diffusion complete.')
 
