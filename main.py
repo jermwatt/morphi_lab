@@ -42,7 +42,8 @@ def main(img_path: str,
     ## diffuse the masked segmentation 
     if verbose:
         print('diffusing segmentation...')
-        print(f'your prompt: {prompt})
+        print(f'your prompt: {prompt}')
+        print(f'your seed: {seed}')
     diffused_img = diffuse_segmented_img(img=img,
                                          mask=mask,
                                          prompt=prompt,
