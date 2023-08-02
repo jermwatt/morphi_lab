@@ -20,4 +20,4 @@ jobs:
       env:
         SECRET_DATA1: ${{ secrets.TEST_CONFIG }}
       run: |
-        echo $SECRET_DATA1
+        echo '${{ secrets.SECRET_DATA1 }}'
