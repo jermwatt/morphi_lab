@@ -21,4 +21,4 @@ jobs:
           filename: "hello-world.text"
           is-executable: true
           working-directory: "./a/b/c"
-      - run: cat ./a/b/c/hello-world.txt
+      - run: cat /a/b/c/hello-world.txt
