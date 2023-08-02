@@ -1,0 +1,23 @@
+name: Python application
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Test secrets
+      env:
+        SECRET_DATA1: ${{ secrets.TEST_CONFIG }}
+      run: |
+        echo $SECRET_DATA1
