@@ -18,6 +18,6 @@ jobs:
     - uses: actions/checkout@v3
     - name: Test secrets
       env:
-        SECRET_DATA1: ${{ secrets.TEST_CONFIG }}
+        SECRET_DATA1: ${{ secrets.SECRET_DATA1 }}
       run: |
-        echo '${{ secrets.SECRET_DATA1 }}'
+        echo $SECRET_DATA1
