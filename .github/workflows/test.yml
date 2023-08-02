@@ -18,7 +18,7 @@ jobs:
         uses: mobiledevops/secret-to-file-action@v1
         with:
           base64-encoded-secret: ${{ secrets.SECRET_DATA1 }}
-          filename: "hello-world.text"
+          filename: "hello-world.txt"
           is-executable: true
           working-directory: "./a/b/c"
-      - run: cat /a/b/c/hello-world.txt
+      - run: cat ./a/b/c/hello-world.txt
