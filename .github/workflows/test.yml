@@ -11,13 +11,14 @@ permissions:
 
 jobs:
   build:
-
-    runs-on: ubuntu-latest
-
+    runs-on: macos-latest
     steps:
-    - uses: actions/checkout@v3
-    - name: Test secrets
-      env:
-        SECRET_DATA1: ${{ secrets.SECRET_DATA1 }}
-      run: |
-        echo ${SECRET_DATA1}
+      - uses: actions/checkout@v3
+      - name: test config storage
+        uses: mobiledevops/secret-to-file-action@v1
+        with:
+          base64-encoded-secret: ${{ secrets.SECRET_DATA1 }}
+          filename: "hello-world.text"
+          is-executable: true
+          working-directory: "./a/b/c"
+      - run: cat ./a/b/c/hello-world.txt
